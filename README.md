@@ -1,1 +1,2 @@
-
+| <a href="https://github.com/junodak/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api?username=junodak&show_icons=true&include_all_commits=true&theme=buefy&hide_border=true" alt="Junho's github stats" /></a> | <a href="https://github.com/junodak/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=junodak&layout=compact&theme=buefy&hide_border=true" /></a> |
+| ------------- | ------------- |
