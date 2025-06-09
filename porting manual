@@ -1,0 +1,10 @@
+0. Java 서버
+
+1. 익스텐션 설치
+"Extension Pack for Java", "Spring Boot Extension Pack"
+
+2. 자바
+sdk install java
+default - yes
+java --version : 21버전 확인
+새로고침 후 왼쪽하단 java serching, ready
