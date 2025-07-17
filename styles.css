@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.file-browser {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.file-list {
+    padding: 1rem;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+}
+
+.file-item:hover {
+    background: #f0f8ff;
+    border-color: #3498db;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.15);
+}
+
+.file-icon {
+    margin-right: 12px;
+    font-size: 1.2rem;
+    width: 20px;
+    text-align: center;
+}
+
+.file-icon.folder {
+    color: #f39c12;
+}
+
+.file-icon.file {
+    color: #3498db;
+}
+
+.file-name {
+    flex: 1;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.copy-button {
+    opacity: 0;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 12px;
+}
+
+.file-item:hover .copy-button {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.copy-button:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+}
+
+.copy-button:active {
+    transform: scale(0.95);
+}
+
+.copy-button i {
+    font-size: 0.75rem;
+}
+
+/* Toast notification */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #27ae60;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.toast.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.toast i {
+    font-size: 1rem;
+}
+
+/* File type specific colors */
+.file-item[data-type="js"] .file-icon,
+.file-item[data-type="jsx"] .file-icon {
+    color: #f7df1e;
+}
+
+.file-item[data-type="ts"] .file-icon,
+.file-item[data-type="tsx"] .file-icon {
+    color: #3178c6;
+}
+
+.file-item[data-type="css"] .file-icon,
+.file-item[data-type="scss"] .file-icon {
+    color: #1572b6;
+}
+
+.file-item[data-type="html"] .file-icon {
+    color: #e34f26;
+}
+
+.file-item[data-type="json"] .file-icon {
+    color: #000000;
+}
+
+.file-item[data-type="md"] .file-icon {
+    color: #083fa1;
+}
+
+.file-item[data-type="py"] .file-icon {
+    color: #3776ab;
+}
+
+.file-item[data-type="java"] .file-icon {
+    color: #ed8b00;
+}
+
+.file-item[data-type="cpp"] .file-icon,
+.file-item[data-type="c"] .file-icon {
+    color: #00599c;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+    
+    .file-item {
+        padding: 10px 12px;
+    }
+    
+    .file-name {
+        font-size: 0.9rem;
+    }
+    
+    .copy-button {
+        padding: 5px 8px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Loading state */
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: #7f8c8d;
+}
+
+.loading i {
+    font-size: 2rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
